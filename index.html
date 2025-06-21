@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #2E8B57 0%, #3CB371 100%);
             min-height: 100vh;
             padding: 20px;
         }
@@ -29,7 +29,7 @@
         }
 
         .header {
-            background: linear-gradient(135deg, #2196F3, #21CBF3);
+            background: linear-gradient(135deg, #2E8B57, #228B22);
             color: white;
             padding: 40px 30px;
             text-align: center;
@@ -38,25 +38,18 @@
         }
 
         .header::before {
-            content: '';
+            content: '☪️';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 2px,
-                rgba(255,255,255,0.1) 2px,
-                rgba(255,255,255,0.1) 4px
-            );
-            animation: float 20s linear infinite;
+            font-size: 100px;
+            opacity: 0.1;
+            top: 20px;
+            right: 30px;
+            animation: float 6s ease-in-out infinite;
         }
 
         @keyframes float {
-            0% { transform: translate(-50%, -50%) rotate(0deg); }
-            100% { transform: translate(-50%, -50%) rotate(360deg); }
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
         }
 
         .header-content {
@@ -90,9 +83,10 @@
 
         .search-title {
             font-size: 1.5em;
-            color: #333;
+            color: #2E8B57;
             margin-bottom: 20px;
             text-align: center;
+            font-weight: bold;
         }
 
         .search-form {
@@ -104,14 +98,14 @@
 
         .form-group {
             flex: 1;
-            min-width: 250px;
+            min-width: 200px;
         }
 
         .form-group label {
             display: block;
             margin-bottom: 8px;
-            color: #555;
-            font-weight: 500;
+            color: #2E8B57;
+            font-weight: 600;
         }
 
         .form-group input, .form-group select {
@@ -125,12 +119,12 @@
 
         .form-group input:focus, .form-group select:focus {
             outline: none;
-            border-color: #2196F3;
-            box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+            border-color: #2E8B57;
+            box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.1);
         }
 
         .search-btn {
-            background: linear-gradient(135deg, #4CAF50, #45a049);
+            background: linear-gradient(135deg, #2E8B57, #228B22);
             color: white;
             border: none;
             padding: 12px 30px;
@@ -144,7 +138,7 @@
 
         .search-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+            box-shadow: 0 5px 15px rgba(46, 139, 87, 0.4);
         }
 
         .result-section {
@@ -173,11 +167,11 @@
         }
 
         .result-card.lulus {
-            border-color: #4CAF50;
+            border-color: #2E8B57;
         }
 
         .result-card.tidak-lulus {
-            border-color: #f44336;
+            border-color: #DC143C;
         }
 
         .result-header {
@@ -188,11 +182,11 @@
         }
 
         .result-header.lulus {
-            background: linear-gradient(135deg, #4CAF50, #66BB6A);
+            background: linear-gradient(135deg, #2E8B57, #3CB371);
         }
 
         .result-header.tidak-lulus {
-            background: linear-gradient(135deg, #f44336, #EF5350);
+            background: linear-gradient(135deg, #DC143C, #FF6347);
         }
 
         .status-icon {
@@ -229,17 +223,17 @@
             padding: 15px;
             background: #f8f9fa;
             border-radius: 10px;
-            border-left: 4px solid #2196F3;
+            border-left: 4px solid #2E8B57;
         }
 
         .info-label {
             font-weight: 600;
-            color: #333;
+            color: #2E8B57;
             min-width: 120px;
         }
 
         .info-value {
-            color: #666;
+            color: #333;
             font-size: 1.05em;
         }
 
@@ -249,20 +243,21 @@
 
         .scores-title {
             font-size: 1.3em;
-            color: #333;
+            color: #2E8B57;
             margin-bottom: 15px;
             text-align: center;
+            font-weight: bold;
         }
 
         .scores-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
         }
 
         .score-item {
-            background: #f8f9fa;
-            padding: 15px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 12px;
             border-radius: 10px;
             text-align: center;
             border: 2px solid #e9ecef;
@@ -272,18 +267,20 @@
         .score-item:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-color: #2E8B57;
         }
 
         .score-subject {
             font-weight: 600;
-            color: #333;
-            margin-bottom: 8px;
+            color: #2E8B57;
+            margin-bottom: 6px;
+            font-size: 0.9em;
         }
 
         .score-value {
-            font-size: 1.5em;
+            font-size: 1.3em;
             font-weight: bold;
-            color: #2196F3;
+            color: #228B22;
         }
 
         .no-result {
@@ -302,11 +299,18 @@
         }
 
         .footer {
-            background: #333;
+            background: #2E8B57;
             color: white;
             text-align: center;
             padding: 20px;
             margin-top: 40px;
+        }
+
+        .islamic-decoration {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.2em;
+            color: #2E8B57;
         }
 
         @media (max-width: 768px) {
@@ -325,6 +329,10 @@
             .student-info {
                 grid-template-columns: 1fr;
             }
+            
+            .scores-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
         }
     </style>
 </head>
@@ -332,12 +340,19 @@
     <div class="container">
         <div class="header">
             <div class="header-content">
-                <h1>📋 PENGUMUMAN KELULUSAN</h1>
-                <p>MIS DARUL FALAH TAHUN AJARAN 2024/2025</p>
+                <h1>🕌 PENGUMUMAN KELULUSAN</h1>
+                <p>MADRASAH IBTIDAIYAH SWASTA DARUL FALAH</p>
+                <p>TAHUN PELAJARAN 2024/2025</p>
             </div>
         </div>
 
         <div class="main-content">
+            <div class="islamic-decoration">
+                بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم
+                <br>
+                <small><em>"Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang"</em></small>
+            </div>
+
             <div class="search-section">
                 <h2 class="search-title">🔍 Cari Data Kelulusan Siswa</h2>
                 <div class="search-form">
@@ -349,18 +364,6 @@
                         <label for="nama">Nama Lengkap:</label>
                         <input type="text" id="nama" placeholder="Masukkan nama lengkap siswa">
                     </div>
-                    <div class="form-group">
-                        <label for="kelas">Kelas:</label>
-                        <select id="kelas">
-                            <option value="">Pilih Kelas</option>
-                            <option value="XII RPL 1">XII RPL 1</option>
-                            <option value="XII RPL 2">XII RPL 2</option>
-                            <option value="XII TKJ 1">XII TKJ 1</option>
-                            <option value="XII TKJ 2">XII TKJ 2</option>
-                            <option value="XII MM 1">XII MM 1</option>
-                            <option value="XII AKL 1">XII AKL 1</option>
-                        </select>
-                    </div>
                     <button class="search-btn" onclick="cariSiswa()">🔍 CARI</button>
                 </div>
             </div>
@@ -370,93 +373,133 @@
 
         <div class="footer">
             <p>&copy; 2025 MIS Darul Falah. Sistem Pengumuman Kelulusan Digital.</p>
+            <p><small>جَزَاكُمُ اللَّهُ خَيْرًا - Semoga Allah membalas kebaikan kalian</small></p>
         </div>
     </div>
 
     <script>
-        // Data siswa contoh (dalam implementasi nyata, ini akan diambil dari database)
+        // Data siswa contoh - GANTI dengan data siswa sebenarnya
         const dataSiswa = [
             {
-                nisn: "1234567890",
-                nama: "Ahmad Rizki Pratama",
-                kelas: "XII RPL 1",
-                jurusan: "Rekayasa Perangkat Lunak",
+                nisn: "2345678901",
+                nama: "Ahmad Fadhil Rahman",
+                kelas: "VI",
                 status: "lulus",
-                nilaiUN: {
-                    "Bahasa Indonesia": 85,
-                    "Bahasa Inggris": 78,
-                    "Matematika": 82,
-                    "Produktif RPL": 88
-                },
-                rataRata: 83.25,
-                predikat: "Baik"
-            },
-            {
-                nisn: "1234567891",
-                nama: "Siti Nurhaliza",
-                kelas: "XII TKJ 1",
-                jurusan: "Teknik Komputer dan Jaringan",
-                status: "lulus",
-                nilaiUN: {
+                nilaiUS: {
+                    "Alquran Hadist": 88,
+                    "Akidah Akhlak": 85,
+                    "Fikih": 87,
+                    "SKI": 84,
+                    "PPKn": 86,
                     "Bahasa Indonesia": 89,
-                    "Bahasa Inggris": 85,
-                    "Matematika": 87,
-                    "Produktif TKJ": 91
+                    "Bahasa Arab": 83,
+                    "Matematika": 82,
+                    "IPA": 85,
+                    "IPS": 87,
+                    "SBdP": 88,
+                    "PJOK": 90,
+                    "Baca Tulis Quran": 91
                 },
-                rataRata: 88.0,
-                predikat: "Sangat Baik"
-            },
-            {
-                nisn: "1234567892",
-                nama: "Budi Santoso",
-                kelas: "XII MM 1",
-                jurusan: "Multimedia",
-                status: "tidak-lulus",
-                nilaiUN: {
-                    "Bahasa Indonesia": 72,
-                    "Bahasa Inggris": 68,
-                    "Matematika": 65,
-                    "Produktif MM": 70
-                },
-                rataRata: 68.75,
-                predikat: "Cukup"
-            },
-            {
-                nisn: "1234567893",
-                nama: "Dewi Anggraini",
-                kelas: "XII AKL 1",
-                jurusan: "Akuntansi dan Keuangan Lembaga",
-                status: "lulus",
-                nilaiUN: {
-                    "Bahasa Indonesia": 86,
-                    "Bahasa Inggris": 83,
-                    "Matematika": 84,
-                    "Produktif AKL": 89
-                },
-                rataRata: 85.5,
+                rataRata: 86.5,
                 predikat: "Baik"
             },
             {
-                nisn: "1234567894",
-                nama: "Eko Prasetyo",
-                kelas: "XII RPL 2",
-                jurusan: "Rekayasa Perangkat Lunak",
+                nisn: "2345678902",
+                nama: "Siti Aisyah Putri Zahara",
+                kelas: "VI",
                 status: "lulus",
-                nilaiUN: {
-                    "Bahasa Indonesia": 90,
-                    "Bahasa Inggris": 87,
+                nilaiUS: {
+                    "Alquran Hadist": 92,
+                    "Akidah Akhlak": 90,
+                    "Fikih": 89,
+                    "SKI": 88,
+                    "PPKn": 91,
+                    "Bahasa Indonesia": 93,
+                    "Bahasa Arab": 87,
                     "Matematika": 85,
-                    "Produktif RPL": 92
+                    "IPA": 89,
+                    "IPS": 90,
+                    "SBdP": 91,
+                    "PJOK": 92,
+                    "Baca Tulis Quran": 94
                 },
-                rataRata: 88.5,
+                rataRata: 90.1,
                 predikat: "Sangat Baik"
+            },
+            {
+                nisn: "2345678903",
+                nama: "Muhammad Ridwan Al-Ghifari",
+                kelas: "VI",
+                status: "lulus",
+                nilaiUS: {
+                    "Alquran Hadist": 86,
+                    "Akidah Akhlak": 83,
+                    "Fikih": 85,
+                    "SKI": 82,
+                    "PPKn": 84,
+                    "Bahasa Indonesia": 87,
+                    "Bahasa Arab": 81,
+                    "Matematika": 79,
+                    "IPA": 83,
+                    "IPS": 85,
+                    "SBdP": 86,
+                    "PJOK": 88,
+                    "Baca Tulis Quran": 89
+                },
+                rataRata: 84.5,
+                predikat: "Baik"
+            },
+            {
+                nisn: "2345678904",
+                nama: "Fatimah Az-Zahra Handayani",
+                kelas: "VI",
+                status: "lulus",
+                nilaiUS: {
+                    "Alquran Hadist": 94,
+                    "Akidah Akhlak": 92,
+                    "Fikih": 91,
+                    "SKI": 89,
+                    "PPKn": 93,
+                    "Bahasa Indonesia": 95,
+                    "Bahasa Arab": 90,
+                    "Matematika": 88,
+                    "IPA": 91,
+                    "IPS": 92,
+                    "SBdP": 93,
+                    "PJOK": 94,
+                    "Baca Tulis Quran": 96
+                },
+                rataRata: 92.2,
+                predikat: "Sangat Baik"
+            },
+            {
+                nisn: "2345678905",
+                nama: "Abdullah Hakim Nashiruddin",
+                kelas: "VI",
+                status: "tidak-lulus",
+                nilaiUS: {
+                    "Alquran Hadist": 72,
+                    "Akidah Akhlak": 70,
+                    "Fikih": 68,
+                    "SKI": 69,
+                    "PPKn": 71,
+                    "Bahasa Indonesia": 73,
+                    "Bahasa Arab": 67,
+                    "Matematika": 65,
+                    "IPA": 69,
+                    "IPS": 70,
+                    "SBdP": 72,
+                    "PJOK": 75,
+                    "Baca Tulis Quran": 74
+                },
+                rataRata: 70.4,
+                predikat: "Cukup"
             }
         ];
 
         function cariSiswa() {
             const nisn = document.getElementById('nisn').value.trim();
             const nama = document.getElementById('nama').value.trim().toLowerCase();
-            const kelas = document.getElementById('kelas').value;
 
             let hasil = dataSiswa.filter(siswa => {
                 let cocok = true;
@@ -466,10 +509,6 @@
                 }
                 
                 if (nama && !siswa.nama.toLowerCase().includes(nama)) {
-                    cocok = false;
-                }
-                
-                if (kelas && siswa.kelas !== kelas) {
                     cocok = false;
                 }
                 
@@ -487,17 +526,20 @@
                     <div class="no-result">
                         <div class="no-result-icon">❌</div>
                         <h3>Data Tidak Ditemukan</h3>
-                        <p>Mohon periksa kembali NISN, nama, atau kelas yang Anda masukkan.</p>
+                        <p>Mohon periksa kembali NISN atau nama yang Anda masukkan.</p>
+                        <p><small>Pastikan penulisan nama sesuai dengan data yang terdaftar.</small></p>
                     </div>
                 `;
             } else {
                 let html = '';
                 hasil.forEach(siswa => {
                     const statusIcon = siswa.status === 'lulus' ? '🎉' : '😔';
-                    const statusText = siswa.status === 'lulus' ? 'SELAMAT! ANDA DINYATAKAN LULUS' : 'MOHON MAAF, ANDA BELUM LULUS';
+                    const statusText = siswa.status === 'lulus' ? 
+                        'الحَمْدُ لِلَّهِ - ALHAMDULILLAH! ANDA DINYATAKAN LULUS' : 
+                        'إِنَّا لِلَّهِ وَإِنَّا إِلَيْهِ رَاجِعُون - MOHON MAAF, ANDA BELUM LULUS';
                     
                     let scoresHtml = '';
-                    for (let [mapel, nilai] of Object.entries(siswa.nilaiUN)) {
+                    for (let [mapel, nilai] of Object.entries(siswa.nilaiUS)) {
                         scoresHtml += `
                             <div class="score-item">
                                 <div class="score-subject">${mapel}</div>
@@ -511,7 +553,7 @@
                             <div class="result-header ${siswa.status}">
                                 <span class="status-icon">${statusIcon}</span>
                                 <div class="result-title">${statusText}</div>
-                                <div class="result-subtitle">Ujian Nasional Tahun 2024</div>
+                                <div class="result-subtitle">Ujian Sekolah Tahun 2025</div>
                             </div>
                             <div class="result-body">
                                 <div class="student-info">
@@ -528,8 +570,8 @@
                                         <span class="info-value">${siswa.kelas}</span>
                                     </div>
                                     <div class="info-item">
-                                        <span class="info-label">Jurusan:</span>
-                                        <span class="info-value">${siswa.jurusan}</span>
+                                        <span class="info-label">Jenjang:</span>
+                                        <span class="info-value">Madrasah Ibtidaiyah</span>
                                     </div>
                                     <div class="info-item">
                                         <span class="info-label">Rata-rata:</span>
@@ -542,10 +584,16 @@
                                 </div>
                                 
                                 <div class="scores-section">
-                                    <h3 class="scores-title">📊 Nilai Ujian Nasional</h3>
+                                    <h3 class="scores-title">📊 Nilai Ujian Sekolah</h3>
                                     <div class="scores-grid">
                                         ${scoresHtml}
                                     </div>
+                                </div>
+                                
+                                <div class="islamic-decoration" style="margin-top: 20px;">
+                                    ${siswa.status === 'lulus' ? 
+                                        'بَارَكَ اللَّهُ لَكُمْ - Semoga Allah memberkahi kalian' : 
+                                        'لَا تَيْئَسُوا مِن رَّوْحِ اللَّهِ - Jangan berputus asa dari rahmat Allah'}
                                 </div>
                             </div>
                         </div>
