@@ -141,6 +141,28 @@
             box-shadow: 0 5px 15px rgba(46, 139, 87, 0.4);
         }
 
+        .back-btn {
+            background: linear-gradient(135deg, #6C757D, #495057);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(108, 117, 125, 0.4);
+            background: linear-gradient(135deg, #495057, #343A40);
+        }
+
         .result-section {
             display: none;
             animation: slideInUp 0.5s ease;
@@ -518,11 +540,30 @@
             tampilkanHasil(hasil);
         }
 
+        function kembaliKeHalmanUtama() {
+            // Sembunyikan hasil pencarian
+            const hasilDiv = document.getElementById('hasil');
+            hasilDiv.style.display = 'none';
+            
+            // Bersihkan form pencarian
+            document.getElementById('nisn').value = '';
+            document.getElementById('nama').value = '';
+            
+            // Scroll ke bagian pencarian
+            document.querySelector('.search-section').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
         function tampilkanHasil(hasil) {
             const hasilDiv = document.getElementById('hasil');
             
             if (hasil.length === 0) {
                 hasilDiv.innerHTML = `
+                    <button class="back-btn" onclick="kembaliKeHalmanUtama()">
+                        ← Kembali ke Halaman Utama
+                    </button>
                     <div class="no-result">
                         <div class="no-result-icon">❌</div>
                         <h3>Data Tidak Ditemukan</h3>
@@ -531,7 +572,12 @@
                     </div>
                 `;
             } else {
-                let html = '';
+                let html = `
+                    <button class="back-btn" onclick="kembaliKeHalmanUtama()">
+                        ← Kembali ke Halaman Utama
+                    </button>
+                `;
+                
                 hasil.forEach(siswa => {
                     const statusIcon = siswa.status === 'lulus' ? '🎉' : '😔';
                     const statusText = siswa.status === 'lulus' ? 
